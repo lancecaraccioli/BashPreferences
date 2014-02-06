@@ -74,6 +74,16 @@ alias follow='cls;tail -n 0 -f'
 alias ali='vi "$HOME"/.bash_aliases'
 alias h='cd $HOME'
 
+#############
+# Functinos #
+#############
+
+function child {
+    locate -r "$(pwd)"'.*'"$1"
+}
+
+export -f child
+
 #################
 # User's bin(s) #
 #################
