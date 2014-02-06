@@ -36,7 +36,7 @@
 # Prompt format #
 #################
 
-export PS1='\[\u@\h:\w\]\$ '
+#export PS1='\[\u@\h:\w\]\$ '
 
 ####################
 # Directory colors #
@@ -48,8 +48,8 @@ if [ -z "$LS_COLORS_ORIG" ]; then
     export LS_COLORS_ORIG="$LS_COLORS";
 fi
 
-# Change directory color definitions to a light green
-export LS_COLORS="$LS_COLOR_ORIG"di=00;33:"
+# Change directory color definitions to a yellow
+export LS_COLORS="$LS_COLOR_ORIG""di=00;33:"
 
 #############################
 # General Alias Definitions #
@@ -57,9 +57,9 @@ export LS_COLORS="$LS_COLOR_ORIG"di=00;33:"
 
 alias ls='ls --color=auto'
 alias ll='ls -alF'
-alias ll.='ll .*'
+alias ll.='ll --directory .*'
 alias la='ls -A'
-alias la.='la .*'
+alias la.='la --directory .*'
 alias l='ls -CF'
 alias l.='la.'
 alias ldir='find ./ -maxdepth 1 -type d'
