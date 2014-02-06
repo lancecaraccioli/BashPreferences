@@ -1,0 +1,81 @@
+# .bashrc preferences
+
+######################################################################
+# Source
+#
+# - Author: Lance Caraccioli [lance.caraccioli@gmail.com]
+# - GitHub: https://github.com/lancecaraccioli/BashPreferences
+# - License: MIT
+#
+######################################################################
+
+######################################################################
+# User Preferences
+#
+# Some users have general preferences. This includes general aliases
+# .bash_aliases tends to develop system specific aliases over time
+# therefore moving non specific aliases (e.g. alias ll='ls -alF')
+# to a separate file for easier sharing is often preferable.
+#
+######################################################################
+
+######################################################################
+# Installation 
+#
+# 1. Modify ~/.bashrc to contain a reference to this file
+#
+# if [ -f ~/.bash_preferences ]; then
+#     . ~/.bash_preferences
+# fi
+#
+# 2. Soft link this file if it is not located in your home directory
+#
+######################################################################
+
+#################
+# Prompt format #
+#################
+
+export PS1='\[\u@\h:\w\]\$ '
+
+####################
+# Directory colors #
+####################
+
+# Cache original value to avoid resourcing duplications
+# and ease in redefinition
+if [ -z "$LS_COLORS_ORIG" ]; then
+    export LS_COLORS_ORIG="$LS_COLORS";
+fi
+
+# Change directory color definitions to a light green
+export LS_COLORS="$LS_COLOR_ORIG"di=00;33:"
+
+#############################
+# General Alias Definitions #
+#############################
+
+alias ls='ls --color=auto'
+alias ll='ls -alF'
+alias ll.='ll .*'
+alias la='ls -A'
+alias la.='la .*'
+alias l='ls -CF'
+alias l.='l .*'
+alias ldir='find ./ -maxdepth 1 -type d'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias mine='ps -L -u `whoami` u'
+alias bin='cd "$HOME"/bin;pwd;'
+alias resource='unalias -a;source "$HOME"/.bashrc;echo "resourced bash with $HOME/.bashrc"'
+alias cls='printf "\033c";'
+alias follow='cls;tail -n 0 -f'
+alias ali='vi "$HOME"/.bash_aliases'
+alias h='cd $HOME'
+
+#################
+# User's bin(s) #
+#################
+
+export PATH=$PATH:$HOME/bin:$HOME/.local/bin
