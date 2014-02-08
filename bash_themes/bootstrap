@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [ -z "$BASH_THEMES_THEME_HOME" ]; then
+    SOURCE_SCRIPT_PATH="$(readlink -f ${BASH_SOURCE[0]})"
+    BASH_THEMES_HOME="$(dirname $SOURCE_SCRIPT_PATH)"
+    export BASH_THEMES_THEME_HOME="$BASH_THEMES_HOME/themes"
+fi
+
+function bash_themes_load_theme {
+    local BASH_THEMES_THEME_DIRECTORY="$BASH_THEMES_THEME_HOME/$1"
+    if [ -d "$(readlink -f $BASH_THEMES_THEME_DIRECTORY)" ]; then
+        local LS_COLORS_CONF="$(readlink -f $BASH_THEMES_THEME_DIRECTORY/ls_colors.conf)"
+	if [ -f "$LS_COLORS_CONF" ]; then
+            eval "$(dircolors $LS_COLORS_CONF)"
+	fi
+    fi
+}
+
+
