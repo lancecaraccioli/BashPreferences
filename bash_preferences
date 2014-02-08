@@ -77,18 +77,14 @@ export -f child
 
 export PATH=$PATH:$HOME/bin:$HOME/.local/bin
 
-######################
-# 256 color terminal #
-######################
-
-TERM="xterm-256color"
-
 # Bash Themes Extension #
 #########################
 
 # Use below line to provide a custom theme path
 #export BASH_THEMES_THEME_HOME=/a/custom/path/for/themes
 
-source "$(dirname $(readlink -f ${BASH_SOURCE[0]}))/bash_themes/bootstrap"
-bash_themes_load_theme "ubuntu"
+if [ -n "$BASH_THEME" ]; then
+    source "$(dirname $(readlink -f ${BASH_SOURCE[0]}))/bash_themes/bootstrap"
+    bash_themes_load_theme "$BASH_THEME"
+fi;
 
