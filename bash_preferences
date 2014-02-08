@@ -15,7 +15,9 @@
 # Some users have general preferences. This includes general aliases
 # .bash_aliases tends to develop system specific aliases over time
 # therefore moving non specific aliases (e.g. alias ll='ls -alF')
-# to a separate file for easier sharing is often preferable.
+# to a separate file (this one) for easier sharing is often preferable
+#
+# Do not add system specific .bashrc command to this file
 #
 ######################################################################
 
