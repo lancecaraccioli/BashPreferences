@@ -56,7 +56,7 @@ alias egrep='egrep --color=auto'
 alias mine='ps -L -u `whoami` u'
 alias bin='cd "$HOME"/bin;pwd;'
 alias resource='source "$HOME"/.bashrc;echo "resourced bash with $HOME/.bashrc"'
-alias cls='printf "\033c";'
+alias cls='printf "\033c"'
 alias follow='cls;tail -n 0 -f'
 alias ali='vi "$HOME"/.bash_aliases'
 alias h='cd $HOME'
@@ -86,5 +86,5 @@ export PATH=$PATH:$HOME/bin:$HOME/.local/bin
 if [ -n "$BASH_THEME" ]; then
     source "$(dirname $(readlink -f ${BASH_SOURCE[0]}))/bash_themes/bootstrap"
     bash_themes_load_theme "$BASH_THEME"
-fi;
+fi
 
