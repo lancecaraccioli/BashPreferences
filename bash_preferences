@@ -71,7 +71,9 @@ function child {
     locate -r "$(pwd)"'.*'"$1"
 }
 
-export -f child
+function cl {
+    cd "$1";ll
+}
 
 #################
 # User's bin(s) #
