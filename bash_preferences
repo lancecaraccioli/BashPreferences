@@ -73,6 +73,11 @@ function child {
 
 export -f child
 
+function cl {
+    cd "$1";ll
+}
+
+
 #################
 # User's bin(s) #
 #################
