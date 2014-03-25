@@ -75,6 +75,18 @@ function cl {
     cd "$1";ll
 }
 
+function stamp {
+    if [ -z "$1" ]; then
+        echo "Stamp - $(timestamp)"
+    else
+        echo "$1 - $(timestamp)"
+    fi
+}
+
+timestamp() {
+    date +"%T"
+}
+
 #################
 # User's bin(s) #
 #################
