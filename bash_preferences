@@ -83,7 +83,7 @@ function stamp {
     fi
 }
 
-timestamp() {
+function timestamp {
     date +"%T"
 }
 
